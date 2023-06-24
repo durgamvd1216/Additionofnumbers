@@ -70,6 +70,13 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
             </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>org.springboot.app.Main</mainClass>
+                </configuration>
+            </plugin>
 
             <!-- Maven Spring Boot Plugin -->
 
