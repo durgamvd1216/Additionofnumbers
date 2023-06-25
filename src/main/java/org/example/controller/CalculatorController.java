@@ -20,6 +20,12 @@ public class CalculatorController {
 
         return new Result(result, num1, num2);
     }
+    @PostMapping("/subtract")
+    public Result subNumbers(@RequestBody NumbersRequest numbersRequest) {
+        int result = calculatorService.subNumbers(numbersRequest.getNum1(), numbersRequest.getNum2());
+        return new Result(result, numbersRequest.getNum1(), numbersRequest.getNum2());
+    }
+
 
     public static class NumbersRequest {
         private int num1;
