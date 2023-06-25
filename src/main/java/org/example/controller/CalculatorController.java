@@ -2,6 +2,7 @@ package org.example.controller;
 
 import org.example.CalculatorService.CalculatorService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalculatorController {
     private final CalculatorService calculatorService;
 
-    public CalculatorController(CalculatorService additionService) {
-        this.calculatorService = additionService;
+    public CalculatorController(CalculatorService calculatorService) {
+        this.calculatorService = calculatorService;
     }
 
     @PostMapping("/add")
     public Result addNumbers(@RequestParam int num1, @RequestParam int num2) {
-        int result = calculatorService.addNumbers(num1, num2);
+        int result = CalculatorService.addNumbers(num1, num2);
 
         return new Result(result, num1, num2);
     }
